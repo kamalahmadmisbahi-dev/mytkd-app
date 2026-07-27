@@ -5,7 +5,7 @@ import DataTable from '../shared/DataTable';
 import Modal from '../shared/Modal';
 import EmptyState from '../shared/EmptyState';
 import LoadingSpinner from '../shared/LoadingSpinner';
-import { Plus, Edit, Trash2, BookOpen } from 'lucide-react';
+import { Plus, CreditCard as Edit, Trash2, BookOpen } from 'lucide-react';
 import type { Book } from '../../types';
 
 export default function AdminBooks() {
