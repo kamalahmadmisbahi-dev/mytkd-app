@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Payami Web';
+  src: url('https://www.services.siraatpublications.com/fonts/Payami-Web.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: 'Payami Web', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  direction: rtl;
+}
+
+input, select, textarea {
+  direction: rtl;
+}
+
+/* Custom animations */
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Print styles */
+@media print {
+  .print\\:hidden { display: none !important; }
+  .print\\:shadow-none { box-shadow: none !important; }
+  .print\\:border-0 { border: 0 !important; }
+  body { background: white !important; }
+  * { color: black !important; }
+}
+
+/* RTL fixes */
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Border RTL fix */
+.border-r-3 {
+  border-right-width: 3px;
+}
+
+[dir="rtl"] .border-r-3 {
+  border-right-width: 3px;
+  border-left-width: 0;
+}
+
+/* Dark mode transition */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
